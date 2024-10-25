@@ -14,7 +14,7 @@ terraform {
 # Terraform Provider Block
 provider "google" {
   # Configuratio options
-  project     = "test-environment-te-project"
+  project     = "valid-reflector-430422-u0"
   region      = "us-central1"
   zone        = "us-central1-a"
 }
