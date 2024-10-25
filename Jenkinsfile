@@ -1,8 +1,8 @@
-// def COLOR_MAP = [
-//     'SUCCESS': 'good', 
-//     'FAILURE': 'danger',
-//     'UNSTABLE': 'danger'
-// ]
+def COLOR_MAP = [
+    'SUCCESS': 'good', 
+    'FAILURE': 'danger',
+    'UNSTABLE': 'danger'
+]
 pipeline {
     agent any
     stages {
@@ -51,7 +51,7 @@ pipeline {
         // }
     }
     post {
-    galways {
+    always {
          echo 'Slack Notifications.'
          slackSend channel: '#rs88-terraform-cicd-alerts', //update and provide your channel name
          color: COLOR_MAP[currentBuild.currentResult],
