@@ -17,3 +17,13 @@ resource "google_compute_instance" "terraform-vm-instance" {
     }
   }
 }
+
+# Create a GCS bucket
+resource "google_storage_bucket" "prod-private-buckets" {
+  name          = "prodno-public-access-bucket-mb-${count.index}"
+  location      = "US"
+  force_destroy = true
+
+  public_access_prevention = "enforced"
+  count = 2
+}
